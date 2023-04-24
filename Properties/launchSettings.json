@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "FileConverter": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7160"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 33999,
+      "useSSL": false
+    }
+  }
+}
