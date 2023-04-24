@@ -46,7 +46,7 @@ namespace FileConverter
                 }
             }
 
-            //var arguments = string.Format(" --standalone --embed-resources -f docx -t html -o {1} {0}", inputPath, outputPath);
+            // If 'self-contained' arg is deprecated, use 'embed-resources' instead
             var arguments = string.Format(" --standalone --self-contained -f docx -t html -o {1} {0}", inputPath, outputPath);
 
             var process = new Process
@@ -65,7 +65,6 @@ namespace FileConverter
             process.Start();
             await process.WaitForExitAsync();
             var exitCode = process.ExitCode;
-            //var output = await process.StandardOutput.ReadToEndAsync();
             var error = await process.StandardError.ReadToEndAsync();
             if (exitCode != 0)
             {
